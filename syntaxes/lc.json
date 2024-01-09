@@ -12,6 +12,9 @@
 		},
 		{
 			"include": "#numbers"
+		},
+		{
+			"include": "#specials"
 		}
 	],
 	"repository": {
@@ -72,6 +75,14 @@
 				{
 					"match": "\\b\\d+(\\.\\d+)?\\b",
 					"name": "constant.numeric"
+				}
+			]
+		},
+		"specials": {
+			"patterns": [
+				{
+					"match": "AUTO",
+					"name": "constant.language"
 				}
 			]
 		}

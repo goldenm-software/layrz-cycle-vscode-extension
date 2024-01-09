@@ -1,0 +1,23 @@
+{
+    "fileTypes": [],
+    "scopeName": "markdown.lc.codeblock",
+    "injectionSelector": "L:markup.fenced_code.block.markdown",
+    "patterns": [
+        {
+            "contentName": "meta.embedded.block.lc",
+            "begin": "(lc)(\\s+[^`~]*)?$",
+            "end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
+            "patterns": [
+                {
+                    "begin": "(^|\\G)(\\s*)(.*)",
+                    "while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
+                    "patterns": [
+                        {
+                            "include": "text.lc"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

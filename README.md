@@ -1,65 +1,66 @@
-# layrz-cycle-scripting README
+# Layrz Cycle Scripting Language
+## Introduction
+Layrz has simulators to, well, simulate things. Uses the cycle scripting language (lc for short) to generate or do something. It's very simple to use, look at this example:
+```lc
+MOVETO(0, 0) ATSPEED(0) ATDIRECTION(0)
+WAIT(1)
+MOVETO(0, 1) ATSPEED(10) ATDIRECTION(0)
+```
+This script will move the device to the point (0, 0) with a speed of 0 km/h and a direction of 0 degrees, then it will wait for 1 minute and then it will move the device to the point (0, 1) with a speed of 10 km/h and a direction of 0 degrees.
 
-This is the README for your extension "layrz-cycle-scripting". After writing up a brief description, we recommend including the following sections.
+## Important notes
+- The script is:
+  * Case insensitive.
+  * Whitespace insensitive.
+  * Line insensitive.
+- The highlight of `MOVETO` and `WAIT` are the same, so you can't use them in the same line.
 
-## Features
+## Available functionality
+We provide code snippets and linting procedures, both of then fully tested and working perfectly (Almost everyting, see `Known issues` for more information).
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Available commands
+### MOVETO
+Moves the device to the specified coordinates. Their arguments are:
+- Latitude (double) : The latitude of the point to move to.
+- Longitude (double) : The longitude of the point to move to.
+Note: The latitude should be between -90 and 90 and the longitude should be between -180 and 180.
 
-For example if there is an image subfolder under your extension project workspace:
+### ATSPEED
+Sets the speed of the device. Its argument is:
+- Speed (double) : The speed to set in km/h.
+Note: You can set it as AUTO to calculate the speed using `p1` and `p2` where `p1` is the previous position and `p2` is the current position.
+Note 2: The argument should be greater than 0.
 
-\!\[feature X\]\(images/feature-x.png\)
+### WITHHDOP
+Sets the HDOP of the device. Its argument is:
+- HDOP (double) : The HDOP to set.
+Note: The valid range of HDOP is 0.0 to 1.0.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### WITHSATELLITES
+Sets the number of satellites of the device. Its argument is:
+- Satellites (int) : The number of satellites to set.
+Note: The argument should be greater than 0.
 
-## Requirements
+### WITHALTITUDE
+Sets the altitude of the device. Its argument is:
+- Altitude (double) : The altitude to set in meters.
+Note: The argument should be greater than 0.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### WITHPARAM
+Sets the value of a parameter. Its arguments are:
+- Name (string) : The name of the parameter to set.
+- Value (any) : The value of the parameter to set.
 
-## Extension Settings
+### WAIT
+Waits for the specified amount of time. Its argument is:
+- Time (int) : The time to wait in minutes.
+Note: The argument should be greater than 0.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### ATDIRECTION
+Sets the direction of the device. Its argument is:
+- Direction (double) : The direction to set in degrees.
+Note: The argument should be between 0 and 360.
+Note 2: You can set it as AUTO to calculate the direction using `p1` and `p2` where `p1` is the previous position and `p2` is the current position.
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Known issues
+- The command `WITHPARAM` has a bug that makes the second argument from the snippet "valid". Be careful!

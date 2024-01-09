@@ -1,0 +1,72 @@
+{
+  "MOVETO": {
+    "prefix": "MOVETO",
+    "description": "Move to a position using the coordinates provided",
+    "body": [
+      "MOVETO(latitude, longitude)"
+    ]
+  },
+  "ATSPEED_AUTO": {
+    "prefix": "ATSPEED",
+    "description": "Set the speed of the simulated message to a calculated speed the message using the previous and current message",
+    "body": [
+      "ATSPEED(AUTO)"
+    ]
+  },
+  "ATSPEED_MANUAL": {
+    "prefix": "ATSPEED",
+    "description": "Set the speed of the simulated message to a fixed speed (decimal)",
+    "body": [
+      "ATSPEED(speed)"
+    ]
+  },
+  "WITHHDOP": {
+    "prefix": "WITHHDOP",
+    "description": "Set the HDOP value of the simulated message, should be a value between 0 and 1 (decimal)",
+    "body": [
+      "WITHHDOP(hdop)"
+    ]
+  },
+  "WITHSATELLITES": {
+    "prefix": "WITHSATELLITES",
+    "description": "Set the number of satellites of the simulated message, should be a value greater than 0 (integer)",
+    "body": [
+      "WITHSATELLITES(count)"
+    ]
+  },
+  "WITHALTITUDE": {
+    "prefix": "WITHALTITUDE",
+    "description": "Set the altitude of the simulated message, should be a value greater than 0 (decimal)",
+    "body": [
+      "WITHALTITUDE(altitude)"
+    ]
+  },
+  "WITHPARAM": {
+    "prefix": "WITHPARAM",
+    "description": "Set a raw param of the simulated message, receives two positional arguments: the param name and the param value (string, any)",
+    "body": [
+      "WITHPARAM(key, value)"
+    ]
+  },
+  "WAIT": {
+    "prefix": "WAIT",
+    "description": "Wait for a given amount of minutes before sending the next message, receives one positional argument: the time to wait in minutes (integer)",
+    "body": [
+      "WAIT(minutes)"
+    ]
+  },
+  "ATDIRECTION_AUTO": {
+    "prefix": "ATDIRECTION",
+    "description": "Set the direction or bearing of the simulated message to a calculated direction the message using the previous and current message",
+    "body": [
+      "ATDIRECTION(AUTO)"
+    ]
+  },
+  "ATDIRECTION_MANUAL": {
+    "prefix": "ATDIRECTION",
+    "description": "Set the direction or bearing of the simulated message to a fixed direction (decimal)",
+    "body": [
+      "ATDIRECTION(direction)"
+    ]
+  }
+}

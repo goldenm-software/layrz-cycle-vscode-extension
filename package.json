@@ -2,13 +2,14 @@
   "name": "layrz-cycle-scripting",
   "displayName": "Layrz Cycle Scripting",
   "description": "Layrz Cycle Syntax Highlight to support simulations",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "goldenm-software",
   "author": "Golden M <software@goldenm.com>",
   "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
   },
+  "icon": "images/sdk.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/goldenm-software/layrz-cycle-vscode-extension"

@@ -1,0 +1,80 @@
+{
+	"name": "lc",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"comment": {
+			"patterns": [
+				{
+					"match": "#.*$",
+					"name": "comment.line"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"match": "\".*?\"",
+					"name": "string.quoted.double"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"match": "MOVETO",
+					"name": "keyword.control"
+				},
+				{
+					"match": "ATSPEED",
+					"name": "support.function"
+				},
+				{
+					"match": "WITHHDOP",
+					"name": "support.function"
+				},
+				{
+					"match": "WITHSATELLITES",
+					"name": "support.function"
+				},
+				{
+					"match": "WITHALTITUDE",
+					"name": "support.function"
+				},
+				{
+					"match": "WITHPARAM",
+					"name": "support.function"
+				},
+				{
+					"match": "WAIT",
+					"name": "keyword.control"
+				},
+				{
+					"match": "ATDIRECTION",
+					"name": "support.function"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"match": "\\b\\d+(\\.\\d+)?\\b",
+					"name": "constant.numeric"
+				}
+			]
+		}
+	},
+	"scopeName": "text.lc"
+}

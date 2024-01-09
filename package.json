@@ -1,0 +1,40 @@
+{
+  "name": "layrz-cycle-scripting",
+  "displayName": "Layrz Cycle Scripting",
+  "description": "Layrz Cycle Syntax Highlight to support simulations",
+  "version": "1.0.0",
+  "publisher": "goldenm-software",
+  "author": {
+    "name": "Golden M",
+    "email": "software@goldenm.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "lc",
+        "aliases": [
+          "Layrz Cycle Scripting",
+          "lc"
+        ],
+        "extensions": [
+          "lc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lc",
+        "scopeName": "text.lc",
+        "path": "./syntaxes/lcLanguage.tmLanguage.json"
+      }
+    ]
+  }
+}
